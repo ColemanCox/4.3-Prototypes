@@ -93,61 +93,6 @@ console.assert(garfield instanceof Cat, 'variable garfield should be an instance
 console.assert(garfield.growl() === 'meow', 'all cats should have a method `growl` that returns `meow`');
 
 // --------------------------------------------------------------- //
-
-/////////////////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////////////////////
-
-// 4. ------------------------------------------------------------ //
-
-// Create a constructor called `KeepSecret`. The constructor function
-// itself should accept a parameter called `secret` it should store
-// this in a private variable (use a closure). Add a method to the
-// prototype that is called `squeal` that returns the secret string.
-
-// -- ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ - Your Answer - ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ -- //
-
-// -- ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ -- //
-
-// ==== Validating =============================================== //
-
-var mySecret = 'My class rocks!';
-var dontTellNobody = new KeepSecret(mySecret);
-console.assert(typeof dontTellNobody.secret, 'DONT TELL ANYONE MY SECRET!!!');
-console.assert(dontTellNobody.squeal() === mySecret, 'Tell a secret when you `squeal`');
-
-// --------------------------------------------------------------- //
-
-/////////////////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////////////////////
-
-// 5. ------------------------------------------------------------ //
-
-// Create a constructor called `Key`. Create another constructor
-// called `Safe`. Make the Safe constructor take 2 arguments. The
-// first argument can be any piece if data to keep safe. This must
-// be stored using a private variable like you did with KeepSecret.
-// The 2nd param to the `Safe` constructor needs to be an instance
-// of `Key` you need to store it privately as well. Add a function
-// to the Safe prototype called `unlock` that accepts a key. If the
-// key matches the key that was used to create the Safe; then return
-// the secret data.
-
-// -- ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ - Your Answer - ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ -- //
-
-// -- ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ -- //
-
-// ==== Validating =============================================== //
-
-var sensitive = 'shhhhh!';
-var rightKey  = new Key();
-var wrongKey  = new Key();
-var safe      = new Safe(sensitive, rightKey);
-
-console.assert(safe.unlock(wrongKey) !== sensitive, 'invalid keys shouldn\'t open the safe');
-console.assert(safe.unlock(rightKey) === sensitive, 'valid keys should open the safe');
-
-// --------------------------------------------------------------- //
-
 /////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////
 ////                                                             ////
@@ -167,6 +112,21 @@ console.assert(safe.unlock(rightKey) === sensitive, 'valid keys should open the 
 // the string is a valid email address and false if it is not.
 
 // -- ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ - Your Answer - ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ -- //
+function Validator() {
+}
+
+var valid = ('name@theironyard.com');
+var  = ('name-at-the-iron-yard.com');
+Validator.prototype.email = function() {
+  if (valid == email)
+    return 'Your email is valid';
+
+  else {
+
+    return 'email is valid';
+  }
+
+};
 
 // -- ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ -- //
 
