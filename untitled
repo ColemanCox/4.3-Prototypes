@@ -91,6 +91,12 @@ var garfield = new Cat();
 
 console.assert(garfield instanceof Cat, 'variable garfield should be an instanceof Cat');
 console.assert(garfield.growl() === 'meow', 'all cats should have a method `growl` that returns `meow`');
+
+// --------------------------------------------------------------- //
+
+/////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////
+
 // 4. ------------------------------------------------------------ //
 
 // Create a constructor called `KeepSecret`. The constructor function
@@ -99,15 +105,7 @@ console.assert(garfield.growl() === 'meow', 'all cats should have a method `grow
 // prototype that is called `squeal` that returns the secret string.
 
 // -- ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ - Your Answer - ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ -- //
-function KeepSecret() {
 
-}
-
-KeepSecret.prototype.mySecret = function() {
-this.mySecret
-};
-
-var dontTellNobody = new KeepSecret(mySecret);
 // -- ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ -- //
 
 // ==== Validating =============================================== //
@@ -149,6 +147,7 @@ console.assert(safe.unlock(wrongKey) !== sensitive, 'invalid keys shouldn\'t ope
 console.assert(safe.unlock(rightKey) === sensitive, 'valid keys should open the safe');
 
 // --------------------------------------------------------------- //
+
 /////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////
 ////                                                             ////
@@ -168,21 +167,6 @@ console.assert(safe.unlock(rightKey) === sensitive, 'valid keys should open the 
 // the string is a valid email address and false if it is not.
 
 // -- ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ - Your Answer - ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ -- //
-function Validator() {
-}
-
-var valid = ('name@theironyard.com');
-var invalid  = ('name-at-the-iron-yard.com');
-Validator.prototype.email = function() {
-  if (valid == email)
-    return 'Your email is valid';
-
-  else {
-
-    return 'email is valid';
-  }
-
-};
 
 // -- ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ -- //
 
