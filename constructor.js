@@ -99,23 +99,23 @@ console.assert(garfield.growl() === 'meow', 'all cats should have a method `grow
 // prototype that is called `squeal` that returns the secret string.
 
 // -- ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ - Your Answer - ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ -- //
-function KeepSecret() {
 
+function KeepSecret(secret) {
+  this.squeal = function() {
+    return secret;
+  };
 }
 
-KeepSecret.prototype.mySecret = function() {
-this.mySecret
-};
-
-var dontTellNobody = new KeepSecret(mySecret);
 // -- ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ -- //
 
 // ==== Validating =============================================== //
 
 var mySecret = 'My class rocks!';
 var dontTellNobody = new KeepSecret(mySecret);
-console.assert(typeof dontTellNobody.secret, 'DONT TELL ANYONE MY SECRET!!!');
+var reallyDont = new KeepSecret('Really Dont');
+console.assert(dontTellNobody.secret !== 'DONT TELL ANYONE MY SECRET!!!');
 console.assert(dontTellNobody.squeal() === mySecret, 'Tell a secret when you `squeal`');
+console.assert(reallyDont.squeal() === 'Really Dont', 'Tell a secret when you `squeal`');
 
 // --------------------------------------------------------------- //
 
@@ -136,6 +136,17 @@ console.assert(dontTellNobody.squeal() === mySecret, 'Tell a secret when you `sq
 
 // -- ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ - Your Answer - ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ -- //
 
+function Key() {
+}
+
+function Safe(data, test) {
+  this.unlock = function(keyz) {
+    if (keyz === test) {
+      return data;
+    }
+  };
+
+}
 // -- ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ -- //
 
 // ==== Validating =============================================== //
@@ -168,21 +179,6 @@ console.assert(safe.unlock(rightKey) === sensitive, 'valid keys should open the 
 // the string is a valid email address and false if it is not.
 
 // -- ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ - Your Answer - ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ -- //
-function Validator() {
-}
-
-var valid = ('name@theironyard.com');
-var invalid  = ('name-at-the-iron-yard.com');
-Validator.prototype.email = function() {
-  if (valid == email)
-    return 'Your email is valid';
-
-  else {
-
-    return 'email is valid';
-  }
-
-};
 
 // -- ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ -- //
 
